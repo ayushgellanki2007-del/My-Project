@@ -2,166 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SRH Fan Hub</title>
+  <title>Abhinav Tumla</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #111;
-      color: #fff;
+      background: #0f172a;
+      color: #e2e8f0;
     }
     header {
-      background: orange;
-      padding: 15px;
+      background: #111827;
+      padding: 25px;
       text-align: center;
-      font-size: 24px;
+      font-size: 30px;
       font-weight: bold;
+      letter-spacing: 1px;
     }
     nav {
       display: flex;
       justify-content: center;
-      background: #222;
+      background: #020617;
     }
     nav a {
-      color: white;
-      padding: 10px 20px;
+      color: #e2e8f0;
+      padding: 12px 18px;
       text-decoration: none;
     }
     nav a:hover {
-      background: orange;
+      background: #1f2937;
     }
     section {
-      padding: 20px;
+      padding: 25px;
+      max-width: 800px;
+      margin: auto;
     }
     .card {
-      background: #222;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
+      background: #1e293b;
+      padding: 18px;
+      margin: 12px 0;
+      border-radius: 12px;
     }
-    button {
-      background: orange;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
+    h2 {
+      border-left: 4px solid crimson;
+      padding-left: 10px;
     }
     input, textarea {
       width: 100%;
       padding: 10px;
-      margin: 5px 0;
-      border-radius: 5px;
+      margin-top: 8px;
+      border-radius: 6px;
       border: none;
+      background: #334155;
+      color: white;
+    }
+    button {
+      margin-top: 10px;
+      background: crimson;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #b91c1c;
+    }
+    .rcb {
+      color: crimson;
+      font-weight: bold;
     }
     footer {
       text-align: center;
-      padding: 10px;
-      background: #222;
+      padding: 12px;
+      background: #020617;
+      font-size: 14px;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
 <header>
-  🔥 SRH Fan Hub 🔥
+  Abhinav Tumla
 </header>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#matches">Matches</a>
-  <a href="#tickets">Tickets</a>
-  <a href="#merch">Merch</a>
-  <a href="#cheer">Cheer</a>
+  <a href="#about">About</a>
+  <a href="#background">Background</a>
+  <a href="#vibe">Vibe</a>
+  <a href="#messages">Messages</a>
 </nav>
 
-<section id="home">
-  <h2>Welcome to Sunrisers Hyderabad Fan Hub</h2>
-  <p>Your one-stop destination for SRH matches, tickets, merch, and fan love!</p>
+<section id="about">
+  <h2>About</h2>
+  <div class="card">
+    <p>Tall. Calm. Low-key.</p>
+    <p>Abhinav Tumla prefers simplicity over noise and peace over chaos.</p>
+  </div>
 </section>
 
-<section id="matches">
-  <h2>Upcoming Matches</h2>
-
+<section id="background">
+  <h2>Background</h2>
   <div class="card">
-    <h3>SRH vs CSK</h3>
-    <p>Date: April 28</p>
-    <p>Venue: Hyderabad</p>
+    <p>🎓 JHPS</p>
+    <p>📘 Resonance</p>
+    <p>🏫 CBIT</p>
   </div>
-
-  <div class="card">
-    <h3>SRH vs RCB</h3>
-    <p>Date: May 2</p>
-    <p>Venue: Bengaluru</p>
-  </div>
-
 </section>
 
-<section id="tickets">
-  <h2>Book Match Tickets</h2>
-
+<section id="vibe">
+  <h2>Vibe</h2>
   <div class="card">
-    <p>SRH vs CSK</p>
-    <a href="https://www.bookmyshow.com" target="_blank">
-      <button>Buy Tickets</button>
-    </a>
+    <p>Chooses a peaceful life. Keeps things minimal.</p>
+    <p>Observes more, speaks less.</p>
+    <p>Occasionally supports <span class="rcb">RCB ❤️</span></p>
   </div>
-
-  <div class="card">
-    <p>SRH vs RCB</p>
-    <a href="https://www.bookmyshow.com" target="_blank">
-      <button>Buy Tickets</button>
-    </a>
-  </div>
-
 </section>
 
-<section id="merch">
-  <h2>SRH Merchandise</h2>
+<section id="messages">
+  <h2>Messages</h2>
 
   <div class="card">
-    <p>Official SRH Jersey</p>
-    <button onclick="alert('Redirect to merch store')">Buy Now</button>
+    <h3>Public Message</h3>
+    <form onsubmit="addPublicMessage(event)">
+      <input type="text" id="pubName" placeholder="Your Name (optional)">
+      <textarea id="pubMsg" placeholder="Say something..."></textarea>
+      <button type="submit">Post</button>
+    </form>
   </div>
 
   <div class="card">
-    <p>SRH Cap</p>
-    <button onclick="alert('Redirect to merch store')">Buy Now</button>
+    <h3>Confidential Message 🔒</h3>
+    <form onsubmit="addPrivateMessage(event)">
+      <textarea id="privMsg" placeholder="Write something privately..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p style="font-size: 12px; opacity: 0.6;">
+      This message is not shown publicly.
+    </p>
   </div>
 
-</section>
-
-<section id="cheer">
-  <h2>Cheer for Your Favorite Player</h2>
-
-  <form onsubmit="submitMessage(event)">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="text" id="player" placeholder="Favorite Player" required>
-    <textarea id="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Cheer</button>
-  </form>
-
-  <div id="messages"></div>
+  <div id="publicMessages"></div>
 </section>
 
 <footer>
-  🧡 Made for SRH Fans 🧡
+  Quiet energy > loud presence
 </footer>
 
 <script>
-  function submitMessage(event) {
-    event.preventDefault();
+  function addPublicMessage(e) {
+    e.preventDefault();
 
-    let name = document.getElementById("name").value;
-    let player = document.getElementById("player").value;
-    let message = document.getElementById("message").value;
+    let name = document.getElementById("pubName").value || "Anonymous";
+    let msg = document.getElementById("pubMsg").value;
 
-    let messageBox = document.createElement("div");
-    messageBox.className = "card";
-    messageBox.innerHTML = `<strong>${name}</strong> cheering for <b>${player}</b><br>${message}`;
+    if(msg.trim() === "") return;
 
-    document.getElementById("messages").appendChild(messageBox);
+    let div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = "<strong>" + name + "</strong><br>" + msg;
 
-    document.querySelector("form").reset();
+    document.getElementById("publicMessages").appendChild(div);
+
+    e.target.reset();
+  }
+
+  function addPrivateMessage(e) {
+    e.preventDefault();
+
+    let msg = document.getElementById("privMsg").value;
+
+    // This is just a placeholder (not truly private storage)
+    console.log("Private message:", msg);
+
+    alert("Message sent confidentially.");
+
+    e.target.reset();
   }
 </script>
 
